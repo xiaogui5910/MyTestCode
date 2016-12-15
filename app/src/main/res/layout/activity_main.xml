@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.lenovo.mytestcode.activity.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_test"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    </android.support.v7.widget.RecyclerView>
-</LinearLayout>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <!--侧边栏-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="@android:color/white"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recyclerView"
+                style="@style/left_menu_text"
+                android:text="RecyclerView"/>
+
+            <TextView
+                android:id="@+id/splashActivity"
+                style="@style/left_menu_text"
+                android:text="SplashActivity"/>
+
+            <TextView
+                android:id="@+id/tabLayout"
+                style="@style/left_menu_text"
+                android:text="TabLayout"/>
+
+            <TextView
+                android:id="@+id/coordinatorLayout"
+                style="@style/left_menu_text"
+                android:text="CoordinatorLayout"/>
+
+            <TextView
+                android:id="@+id/collapsingToolbar"
+                style="@style/left_menu_text"
+                android:text="CollapsingToolbar"/>
+            <TextView
+                android:id="@+id/alarm_manager"
+                style="@style/left_menu_text"
+                android:text="AlarmManager"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.v4.widget.DrawerLayout>

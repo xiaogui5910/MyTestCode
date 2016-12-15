@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.lenovo.mytestcode">
+
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-        </activity>
-        <activity android:name=".activity.Test1Activity">
-        </activity>
-        <activity android:name=".activity.TabLayoutTestActivity">
-        </activity>
         <activity
-            android:name=".activity.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".activity.CoordinatorLayoutActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".activity.CollapsingToolbarLayoutActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.RecyclerViewActivity">
+        </activity>
+        <activity android:name=".activity.TabLayoutTestActivity">
+        </activity>
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.CoordinatorLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.CollapsingToolbarLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
-        <receiver android:name=".receiver.MyBroadcastReceiver"
-                  android:exported="true">
+        <receiver
+            android:name=".receiver.MyBroadcastReceiver"
+            android:exported="true">
             <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
             </intent-filter>
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.PACKAGE_ADDED" />-->
-                <!--<action android:name="android.intent.action.PACKAGE_REPLACED" />-->
-                <!--<action android:name="android.intent.action.PACKAGE_REMOVED" />-->
-                <!--<data android:scheme="package" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.PACKAGE_ADDED" /> -->
+            <!-- <action android:name="android.intent.action.PACKAGE_REPLACED" /> -->
+            <!-- <action android:name="android.intent.action.PACKAGE_REMOVED" /> -->
+            <!-- <data android:scheme="package" /> -->
+            <!-- </intent-filter> -->
+        </receiver>
+
+        <activity android:name=".activity.AlarmManagerActivity">
+        </activity>
+        <receiver android:name=".receiver.AlarmReceiver">
+            <intent-filter>
+                <action android:name="alarm_short"/>
+                <action android:name="alarm_repeating"/>
+            </intent-filter>
         </receiver>
     </application>
 

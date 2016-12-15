@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Test1Activity extends AppCompatActivity {
+public class RecyclerViewActivity extends AppCompatActivity {
 
   @Bind(R.id.rv_test1)
   RecyclerView rvTest1;
@@ -70,7 +70,7 @@ public class Test1Activity extends AppCompatActivity {
     rvTest1.addOnItemTouchListener(new OnItemClickListener() {
       @Override
       public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
-        Toast.makeText(Test1Activity.this, "" + list.get(position).getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(RecyclerViewActivity.this, "" + list.get(position).getName(), Toast.LENGTH_SHORT).show();
       }
     });
 
@@ -80,13 +80,13 @@ public class Test1Activity extends AppCompatActivity {
       public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         switch (view.getId()) {
           case R.id.iv_icon:
-            Toast.makeText(Test1Activity.this, "icon" + position, Toast.LENGTH_SHORT).show();
+            Toast.makeText(RecyclerViewActivity.this, "icon" + position, Toast.LENGTH_SHORT).show();
             break;
           case R.id.tv_name:
-            Toast.makeText(Test1Activity.this, "name" + position, Toast.LENGTH_SHORT).show();
+            Toast.makeText(RecyclerViewActivity.this, "name" + position, Toast.LENGTH_SHORT).show();
             break;
           case R.id.tv_desc:
-            Toast.makeText(Test1Activity.this, "desc" + position, Toast.LENGTH_SHORT).show();
+            Toast.makeText(RecyclerViewActivity.this, "desc" + position, Toast.LENGTH_SHORT).show();
             break;
         }
       }
