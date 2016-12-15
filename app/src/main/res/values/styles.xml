@@ -6,6 +6,30 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:listDivider">@drawable/divider_bg</item>
+    </style>
+    <!--<style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">-->
+        <!--<item name="tabIndicatorColor">#0000FF</item>-->
+    <!--</style>-->
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
     </style>
 
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!--去掉actionbar主题-->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 这里设置左上角可点击展开的小图标 -->
+        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+    </style>
+
+    <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
 </resources>
