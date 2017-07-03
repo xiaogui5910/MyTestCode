@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_share_element_for4x"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lenovo.mytestcode.activity.ShareElementFor4xActivity">
+
+    <!--主界面-->
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <!--主界面容器-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <!--标题栏-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/white">
+
+                    <!--标题栏左边侧边栏按钮-->
+                    <FrameLayout
+                        android:id="@+id/fl_asef_drawer_left"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/actionbar_black"/>
+                    </FrameLayout>
+
+                    <!--标题栏右边显示网速-->
+                    <FrameLayout
+                        android:id="@+id/fl_asef_net_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/wifi_green"
+                            android:gravity="center"
+                            android:text="13.5KB/S"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="14sp"/>
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <!--选择场景模式-->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/activity_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/position"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:padding="10dp"
+                            android:text="选择场景模式"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="16sp"/>
+
+                        <com.example.lenovo.mytestcode.widget.ClipViewPager
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"
+                            android:paddingEnd="90dp"
+                            android:paddingLeft="120dp"
+                            android:paddingRight="120dp"
+                            android:paddingStart="90dp"
+                            />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <!--内容入口-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/fl_scene_one"
+                        style="@style/Scene_Content_FrameLayout">
+
+                        <TextView
+                            style="@style/scene_txt_style"
+                            android:drawableTop="@drawable/scene_one"
+                            android:text="推荐"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/fl_scene_two"
+                        style="@style/Scene_Content_FrameLayout">
+
+                        <TextView
+                            style="@style/scene_txt_style"
+                            android:drawableTop="@drawable/scene_two"
+                            android:text="音乐"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/fl_scene_three"
+                        style="@style/Scene_Content_FrameLayout">
+
+                        <TextView
+                            style="@style/scene_txt_style"
+                            android:drawableTop="@drawable/scene_three"
+                            android:text="视频"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/fl_scene_four"
+                        style="@style/Scene_Content_FrameLayout">
+
+                        <TextView
+                            style="@style/scene_txt_style"
+                            android:drawableTop="@drawable/scene_four"
+                            android:text="场景"/>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <!--频道分类-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_scene_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <!--底部导航栏-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_bottom_contain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/white"
+                card_view:cardCornerRadius="5dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_bottom_floating_view_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="afterDescendants"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cv_bottom_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        card_view:cardCornerRadius="5dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_bottom_floating_view_img"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/test2"/>
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_bottom_floating_view_channel_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Love Story"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_bottom_floating_view_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Taylor Swift"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_bottom_floating_view_play"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/simple_player_center_play"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+        <!--侧滑菜单界面-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="侧滑菜单"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+
+</RelativeLayout>

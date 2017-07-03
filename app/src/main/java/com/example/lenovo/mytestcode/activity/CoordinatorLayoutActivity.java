@@ -73,7 +73,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
     //设置viewpager数据
     MyFragmentPagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
     viewpager.setAdapter(pagerAdapter);
-    //关联tablayout
+//    //关联tablayout
     tabs.setupWithViewPager(viewpager);
     //设置显示模式
     tabs.setTabMode(TabLayout.MODE_FIXED);

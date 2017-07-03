@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_floating_view_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/iv_bottom_floating_view_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/test2"/>
+
+        <TextView
+            android:id="@+id/tv_bottom_floating_view_channel_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="频道:节目名称"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/iv_bottom_floating_view_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:src="@drawable/simple_player_center_play"/>
+    </LinearLayout>
+
+</LinearLayout>

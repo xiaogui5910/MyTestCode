@@ -10,6 +10,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lenovo.mytestcode.R;
+import com.example.lenovo.mytestcode.utils.ToastUtil;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+  private static final String TAG = "MainActivity";
   @Bind(R.id.rv_test)
   RecyclerView rvTest;
   @Bind(R.id.toolbar)
@@ -49,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void initLeft() {
-
   }
 
   private void initToolbar() {
+    Log.e(TAG, "initToolbar: start---------------------------------------------" );
 //    toolbar.setTitle("MyTestCode");
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,7 +82,11 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
-  @OnClick({R.id.recyclerView, R.id.splashActivity, R.id.tabLayout, R.id.coordinatorLayout, R.id.collapsingToolbar,R.id.alarm_manager})
+  @OnClick({R.id.recyclerView, R.id.splashActivity, R.id.tabLayout, R.id.coordinatorLayout,
+          R.id.collapsingToolbar, R.id.alarm_manager, R.id.share_element, R.id.share_element_view_pager,
+          R.id.scene_custom,R.id.clip_viewPager,R.id.blur,R.id.group_recyclerview,R.id.custom_tabView,R.id.slide_menu,
+          R.id.test_db,R.id.random_num,R.id.slide_viewpager,R.id.palette_imageview,R.id.downloadmanager,R.id.rxjava,
+          R.id.weixin_bottom})
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.recyclerView:
@@ -100,11 +107,57 @@ public class MainActivity extends AppCompatActivity {
       case R.id.alarm_manager:
         goToNext(AlarmManagerActivity.class);
         break;
+      case R.id.share_element:
+        goToNext(ShareElementFor4xActivity.class);
+        break;
+      case R.id.share_element_view_pager:
+        goToNext(ShareElementFor4xViewPagerActivity.class);
+        break;
+      case R.id.scene_custom:
+        goToNext(SceneCustomActivity.class);
+        break;
+      case R.id.clip_viewPager:
+        goToNext(ClipViewPagerActivity.class);
+        break;
+      case R.id.blur:
+        goToNext(BlurActivity.class);
+        break;
+      case R.id.group_recyclerview:
+        goToNext(GroupRecyclerViewActivity.class);
+        break;
+      case R.id.custom_tabView:
+        goToNext(CustomTabViewActivity.class);
+        break;
+      case R.id.slide_menu:
+        goToNext(SlideMenuActivity.class);
+        ToastUtil.showToast("slidemenu");
+        break;
+      case R.id.test_db:
+        goToNext(TestDBActivity.class);
+        break;
+      case R.id.random_num:
+        goToNext(RandomNumActivity.class);
+        break;
+      case R.id.slide_viewpager:
+        goToNext(SlideViewPagerActivity.class);
+        break;
+      case R.id.palette_imageview:
+        goToNext(PaletteImageViewActivity.class);
+        break;
+      case R.id.downloadmanager:
+        goToNext(DownloadManagerActivity.class);
+        break;
+      case R.id.rxjava:
+        goToNext(RxJavaTestActivity.class);
+        break;
+      case R.id.weixin_bottom:
+        goToNext(Main2Activity.class);
+        break;
     }
   }
 
   private void goToNext(Class<?> clazz) {
-    startActivity(new Intent(this,clazz));
+    startActivity(new Intent(this, clazz));
   }
 
   class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
@@ -164,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
     }
     return true;
   }
+
 
   @Override
   public void onConfigurationChanged(Configuration newConfig) {

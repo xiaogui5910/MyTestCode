@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.view_texst.MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+<com.example.view_texst.HealthTestForBelief
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/health_test_for_belief"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lkalkfjlaq"
+        android:textSize="20sp"
+        android:id="@+id/ll"
+        />
+    <com.example.view_texst.HealthTestForBelief
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/health_test_for_knowledge"
+        /><com.example.view_texst.HealthTestForBelief
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/health_test_for_dependence"
+    />
+<ScrollView
+android:layout_gravity="top"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_gravity="top"
+                android:orientation="vertical"
+                android:id="@+id/ll_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+</ScrollView>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_size"
+                android:text="就是加一个"
+                android:id="@+id/bt_add"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,4 +1,28 @@
 <resources>
     <string name="app_name">MyTestCode</string>
     <string name="card_string">这种效果在详情页面用的较多，展示个性化内容，图像有强烈的吸引力。这个效果重点使用了CollapsingToolbarLayout 。 CollapsingToolbarLayout可实现Toolbar的折叠效果。</string>
+
+    <string name="title_1">场景一</string>
+    <string name="title_2">场景二</string>
+    <string name="title_3">场景三</string>
+    <string name="title_4">场景四</string>
+    <string name="title_5">场景四</string>
+
+    <string name="text_1">类型1、类型2、类型3</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="values">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4 is really long</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+    </string-array>
+
+    <string name="positive">确定</string>
+    <string name="title">title</string>
+    <string name="message">message</string>
+    <string name="negative">取消</string>
 </resources>

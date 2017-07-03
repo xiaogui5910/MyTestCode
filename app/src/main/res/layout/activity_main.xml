@@ -38,7 +38,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -65,10 +65,84 @@
                 android:id="@+id/collapsingToolbar"
                 style="@style/left_menu_text"
                 android:text="CollapsingToolbar"/>
+
             <TextView
                 android:id="@+id/alarm_manager"
                 style="@style/left_menu_text"
                 android:text="AlarmManager"/>
+
+            <TextView
+                android:id="@+id/share_element"
+                style="@style/left_menu_text"
+                android:text="ShareElementFor4X"/>
+
+            <TextView
+                android:id="@+id/share_element_view_pager"
+                style="@style/left_menu_text"
+                android:text="ShareElementFor4XViewPager"/>
+
+            <TextView
+                android:id="@+id/scene_custom"
+                style="@style/left_menu_text"
+                android:text="SceneCustom"/>
+
+            <TextView
+                android:id="@+id/clip_viewPager"
+                style="@style/left_menu_text"
+                android:text="ClipViewPager"/>
+
+            <TextView
+                android:id="@+id/blur"
+                style="@style/left_menu_text"
+                android:text="Blur"/>
+
+            <TextView
+                android:id="@+id/group_recyclerview"
+                style="@style/left_menu_text"
+                android:text="GroupRecyclerView"/>
+
+            <TextView
+                android:id="@+id/custom_tabView"
+                style="@style/left_menu_text"
+                android:text="CustomTabView"/>
+
+            <TextView
+                android:id="@+id/slide_menu"
+                style="@style/left_menu_text"
+                android:text="SlideMenu"/>
+
+            <TextView
+                android:id="@+id/test_db"
+                style="@style/left_menu_text"
+                android:text="TestDB"/>
+
+            <TextView
+                android:id="@+id/random_num"
+                style="@style/left_menu_text"
+                android:text="RandomNum"/>
+
+            <TextView
+                android:id="@+id/slide_viewpager"
+                style="@style/left_menu_text"
+                android:text="SlideViewPager"/>
+
+            <TextView
+                android:id="@+id/palette_imageview"
+                style="@style/left_menu_text"
+                android:text="PaletteImageView"/>
+            <TextView
+                android:id="@+id/downloadmanager"
+                style="@style/left_menu_text"
+                android:text="DownloadManager"/>
+            <TextView
+                android:id="@+id/rxjava"
+                style="@style/left_menu_text"
+                android:text="RxJava"/>
+            <TextView
+                android:id="@+id/weixin_bottom"
+                style="@style/left_menu_text"
+                android:text="WeiXinBottomView"/>
+
         </LinearLayout>
 
     </ScrollView>

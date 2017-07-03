@@ -3,8 +3,12 @@
           package="com.example.lenovo.mytestcode">
 
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
+        android:name=".utils.MyTestCodeApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -52,12 +56,59 @@
 
         <activity android:name=".activity.AlarmManagerActivity">
         </activity>
+
         <receiver android:name=".receiver.AlarmReceiver">
             <intent-filter>
                 <action android:name="alarm_short"/>
                 <action android:name="alarm_repeating"/>
             </intent-filter>
         </receiver>
+
+        <service android:name=".service.MyTestService">
+        </service>
+
+        <activity
+            android:name=".activity.ShareElementFor4xActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.ShareElementFor4xSecondActivity"
+            android:theme="@style/Transparent">
+        </activity>
+        <activity
+            android:name=".activity.ShareElementFor4xViewPagerActivity"
+            android:theme="@style/Transparent">
+        </activity>
+        <activity android:name=".activity.SceneCustomActivity">
+        </activity>
+        <activity
+            android:name=".activity.ClipViewPagerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".activity.BlurActivity">
+        </activity>
+        <activity android:name=".activity.GroupRecyclerViewActivity">
+        </activity>
+        <activity android:name=".activity.CustomTabViewActivity">
+        </activity>
+        <activity
+            android:name=".activity.SlideMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".activity.TestDBActivity">
+        </activity>
+        <activity android:name=".activity.RandomNumActivity">
+        </activity>
+        <activity android:name=".activity.SlideViewPagerActivity">
+        </activity>
+        <activity android:name=".activity.PaletteImageViewActivity">
+        </activity>
+        <activity android:name=".activity.DownloadManagerActivity">
+        </activity>
+        <activity android:name=".activity.RxJavaTestActivity">
+        </activity>
+        <activity android:name=".activity.Main2Activity">
+        </activity>
     </application>
 
 </manifest>

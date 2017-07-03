@@ -1,12 +1,16 @@
 package com.example.lenovo.mytestcode.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -27,6 +31,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
   RecyclerView rvTest1;
 
   private ArrayList<Status> list;
+  private View header;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +51,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
     //使RecyclerView保持固定的大小，该信息被用于自身的优化
     rvTest1.setHasFixedSize(true);
 
-    rvTest1.setLayoutManager(new LinearLayoutManager(this));
+//    rvTest1.setLayoutManager(new LinearLayoutManager(this));
+    rvTest1.setLayoutManager(new GridLayoutManager(this,3));
     QuickAdapter adapter = new QuickAdapter();
 
     //开启加载动画
@@ -61,7 +67,18 @@ public class RecyclerViewActivity extends AppCompatActivity {
     adapter.setEmptyView(LayoutInflater.from(this).inflate(R.layout.emptyview, (ViewGroup) rvTest1.getParent(),false));
 
     //添加头布局
-    adapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.headview, (ViewGroup) rvTest1.getParent(),false));
+    header = LayoutInflater.from(this).inflate(R.layout.headview, (ViewGroup) rvTest1.getParent(), false);
+    WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+    DisplayMetrics outMetrics = new DisplayMetrics();
+    wm.getDefaultDisplay().getMetrics(outMetrics);
+    int screenWidth=outMetrics.widthPixels;
+    int screenHeight=outMetrics.heightPixels;
+    ViewGroup.LayoutParams layoutParams = header.getLayoutParams();
+    layoutParams.width =screenWidth;
+    layoutParams.height = screenHeight;
+    header.setLayoutParams(layoutParams);
+    Log.e("RecyclerViewActivity", "onCreate: screenWidth="+screenWidth+",screenHeight="+screenHeight );
+    adapter.addHeaderView(header);
 
     //添加底布局
     adapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footerview, (ViewGroup) rvTest1.getParent(),false));
@@ -108,5 +125,16 @@ public class RecyclerViewActivity extends AppCompatActivity {
               .setBackgroundRes(R.id.iv_icon, item.getIcon());
 //      Glide.with(mContext).load(item.getUserAvatar()).crossFade().into((ImageView) helper.getView(R.id.iv));
     }
+  }
+
+  @Override
+  public void onBackPressed() {
+//    for (int i = 0; i < rvTest1.getChildCount(); i++) {
+//      View childView = rvTest1.getChildAt(i);
+//      int firstVisibleItemPosition = ((LinearLayoutManager) rvTest1.getLayoutManager()).findFirstVisibleItemPosition();
+//      if (firstVisibleItemPosition==0 &&childView.getTop()==0){
+        super.onBackPressed();
+//      }
+//    }
   }
 }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    >
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:maxHeight="66dp"
+        android:minHeight="66dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/selector_schedule"
+        android:thumb="@null"
+        android:thumbOffset="0dp"/>
+
+    <RelativeLayout
+        android:visibility="invisible"
+        android:id="@+id/rl_thumb_bg"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <ImageView
+            android:id="@id/iv_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/shape_circle_yellow"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="7dp"
+            android:background="#88E8F8F8"/>
+
+        <ImageView
+            android:id="@+id/iv_thumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/shape_thumb_yellow"/>
+    </RelativeLayout>
+
+</RelativeLayout>

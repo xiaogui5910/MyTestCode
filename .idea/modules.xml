@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyTestCode.iml" filepath="$PROJECT_DIR$/MyTestCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jianshu-weixinbottombar-master/jianshu-weixinbottombar-master.iml" filepath="$PROJECT_DIR$/jianshu-weixinbottombar-master/jianshu-weixinbottombar-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testscanzbar3/testscanzbar3.iml" filepath="$PROJECT_DIR$/testscanzbar3/testscanzbar3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/view_texst/view_texst.iml" filepath="$PROJECT_DIR$/view_texst/view_texst.iml" />
+    </modules>
+  </component>
+</project>

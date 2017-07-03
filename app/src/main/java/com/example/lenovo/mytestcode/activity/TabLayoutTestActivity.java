@@ -1,6 +1,7 @@
 package com.example.lenovo.mytestcode.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,12 @@ public class TabLayoutTestActivity extends AppCompatActivity {
     tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
     tabLayout.setupWithViewPager(viewPager);
     tabLayout.setTabMode(TabLayout.MODE_FIXED);
-
+    new Handler().postDelayed(new Runnable() {
+      @Override
+      public void run() {
+        viewPager.setCurrentItem(1);
+      }
+    },5000);
 //    for (int i = 0; i < tabLayout.getTabCount(); i++) {
 //      TabLayout.Tab tab = tabLayout.getTabAt(i);
 //      tab.setCustomView(pagerAdapter.getTabView(i));

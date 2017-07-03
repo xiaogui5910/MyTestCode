@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <!--时间选择-->
+        <com.example.lenovo.mytestcode.widget.TimeChoiceView
+            android:id="@+id/tl_scene_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="50dp"/>
+
+
+        <!--标签选择-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_scene_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"/>
+
+        <TextView
+            android:id="@+id/tv_scene_replace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/selector_refresh"
+            android:drawablePadding="10dp"
+            android:text="换一批"
+            android:textColor="@color/scene_custom_text_black"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/selector_button_green"
+            android:gravity="center"
+            android:text="选好了"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>

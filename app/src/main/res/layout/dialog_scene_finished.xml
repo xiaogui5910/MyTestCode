@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg_shape">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="播放结束"
+        android:textColor="@color/scene_custom_text_black"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
+
+        <TextView
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/tv_dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="8.5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="32dp"
+            android:paddingTop="8.5dp"
+            android:text="继续收听相似的场景"
+            android:textColor="@color/scene_custom_text_black"
+            android:textSize="15sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_gray"
+            android:gravity="center"
+            android:text="关闭"
+            android:textColor="#B4B4B4"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_dialog_confirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_green"
+            android:gravity="center"
+            android:text="继续收听"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

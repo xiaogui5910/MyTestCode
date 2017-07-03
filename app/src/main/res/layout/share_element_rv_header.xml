@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_head_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--顶部向下图标、标题和tab指针-->
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_triangle_down"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="雨天的周末"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"/>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/sliding_tabs"
+                style="@style/MyCustomTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorHeight="0dp"
+                />
+        </LinearLayout>
+
+
+        <!--中间图片viewpager-->
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/iv_detail"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:layout_below="@+id/ll_top"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--card_view:cardCornerRadius="10dp"-->
+        <!--card_view:cardElevation="5dp"-->
+        <!--&gt;-->
+        <FrameLayout
+            android:layout_below="@+id/ll_top"
+            android:id="@+id/iv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_img"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@drawable/test2"-->
+        <!--/>-->
+        <!--</android.support.v7.widget.CardView>-->
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/iv_detail"
+            android:orientation="vertical"
+            android:visibility="invisible">
+            <!--快捷导航键-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                >
+
+                <FrameLayout
+                    android:id="@+id/fl_scene_more"
+                    style="@style/bottom_frameLayout">
+
+                    <ImageView
+                        style="@style/bottom_btn"
+                        android:src="@drawable/bg_more_option"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_scene_pre"
+                    style="@style/bottom_frameLayout">
+
+                    <ImageView
+                        style="@style/bottom_btn"
+                        android:src="@drawable/pre_play"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_scene_start"
+                    style="@style/bottom_frameLayout">
+
+                    <ImageView
+                        android:id="@+id/iv_scene_play_pause"
+                        style="@style/bottom_btn"
+                        android:src="@drawable/ic_play_circle_black"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_scene_next"
+                    style="@style/bottom_frameLayout">
+
+                    <ImageView
+                        style="@style/bottom_btn"
+                        android:src="@drawable/play_black"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_scene_favorite"
+                    style="@style/bottom_frameLayout">
+
+                    <ImageView
+                        android:id="@+id/iv_scene_favorite"
+                        style="@style/bottom_btn"
+                        android:src="@drawable/fav_normal_50"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bottom_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/time_play"
+                    android:text="0:57"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / 04:36"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

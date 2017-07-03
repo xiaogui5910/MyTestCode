@@ -4,4 +4,16 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="item_bg">#11ff0000</color>
+    <!--场景收听-->
+    <color name="scene_custom_text_black">#111111</color>
+    <color name="scene_custom_text_gray">#777777</color>
+    <color name="button_green">#19B8BD</color>
+    <color name="button_dark_green">#16A5A9</color>
+    <color name="selector_green">#19B8BD</color>
+    <color name="selector_gray">#DCDCDC</color>
+    <color name="play_bg_green">#19B8BD</color>
+    <color name="play_bg_white">#88FFFFFF</color>
+
+    <color name="buttonSelect">#3F51B5</color>
+    <color name="buttonUnSelect">#a4a3a3</color>
 </resources>
