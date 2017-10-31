@@ -142,6 +142,35 @@
                 android:id="@+id/weixin_bottom"
                 style="@style/left_menu_text"
                 android:text="WeiXinBottomView"/>
+            <TextView
+                android:id="@+id/wave_view"
+                style="@style/left_menu_text"
+                android:text="WaveView"/>
+            <TextView
+                android:id="@+id/pie_layout"
+                style="@style/left_menu_text"
+                android:text="PieLayout"/>
+            <TextView
+                android:id="@+id/card_slider"
+                style="@style/left_menu_text"
+                android:text="CardSliderRecyclerView"/>
+            <TextView
+                android:id="@+id/zxing"
+                style="@style/left_menu_text"
+                android:text="Zxing"/>
+            <TextView
+                android:id="@+id/custom_view"
+                style="@style/left_menu_text"
+                android:text="CustomView"/>
+            <TextView
+                android:id="@+id/custom_image"
+                style="@style/left_menu_text"
+                android:text="CustomImage"/>
+            <TextView
+                android:id="@+id/card_view_pager"
+                style="@style/left_menu_text"
+                android:text="CarViewPager"/>
+
 
         </LinearLayout>
 

@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.example.lenovo.mytestcode.R;
 import com.example.lenovo.mytestcode.receiver.AlarmReceiver;
 import com.example.lenovo.mytestcode.utils.DensityUtils;
+import com.orhanobut.logger.Logger;
 
 import java.util.Calendar;
 import java.util.Timer;
@@ -95,6 +96,7 @@ public class AlarmManagerActivity extends AppCompatActivity implements SeekBar.O
   private void init() {
     mContext = this;
     Log.e("111", "init:uid= " + getApplicationInfo().uid);
+    Logger.e( "init:uid= " + getApplicationInfo().uid);
     lastTotalRxBytes = getTotalRxBytes();
     lastTimeStamp = System.currentTimeMillis();
     new Timer().schedule(task, 1000, 2000); // 1s后启动任务，每2s执行一次

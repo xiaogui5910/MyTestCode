@@ -9,9 +9,9 @@
     tools:context="com.example.lenovo.mytestcode.activity.DownloadManagerActivity">
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -22,12 +22,12 @@
             android:text="0.0%-20M"/>
 
         <ProgressBar
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:id="@+id/pb_progress"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"/>
 
         <TextView
@@ -44,27 +44,42 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/btn_start"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
             android:text="start"/>
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/btn_query"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
             android:text="query"/>
 
         <Button
-            android:layout_margin="10dp"
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
             android:text="cancel"/>
     </LinearLayout>
+
+    <com.example.lenovo.mytestcode.widget.WaveProgress
+        android:id="@+id/wave_progress_bar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        app:darkWaveAnimTime="1000"
+        app:darkWaveColor="@android:color/holo_blue_dark"
+        app:lightWaveAnimTime="2000"
+        app:lightWaveColor="@android:color/holo_blue_light"
+        app:lightWaveDirect="R2L"
+        app:lockWave="false"
+        app:valueSize="35sp"
+        app:waveHeight="30dp"
+        app:waveNum="1"/>
 </LinearLayout>

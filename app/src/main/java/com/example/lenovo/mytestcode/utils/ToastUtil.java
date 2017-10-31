@@ -2,6 +2,8 @@ package com.example.lenovo.mytestcode.utils;
 
 import android.widget.Toast;
 
+import com.example.lenovo.mytestcode.application.MyTestCodeApp;
+
 
 public class ToastUtil {
 
@@ -14,7 +16,7 @@ public class ToastUtil {
   public static void showToast(String text){
     if(toast==null){
       //创建吐司对象
-      toast = Toast.makeText(MyTestCodeApplication.context, text, Toast.LENGTH_SHORT);
+      toast = Toast.makeText(MyTestCodeApp.context, text, Toast.LENGTH_SHORT);
     }else {
       //说明吐司已经存在了，那么则只需要更改当前吐司的文字内容
       toast.setText(text);

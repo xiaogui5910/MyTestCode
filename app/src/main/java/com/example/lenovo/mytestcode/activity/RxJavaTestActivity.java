@@ -17,6 +17,7 @@ import com.example.lenovo.mytestcode.network.bean.MovieEntity;
 import com.example.lenovo.mytestcode.network.interf.ApiService;
 import com.example.lenovo.mytestcode.network.interf.SubscriberOnNextListener;
 import com.example.lenovo.mytestcode.network.net.RetrofitUtils;
+import com.orhanobut.logger.Logger;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -927,7 +928,9 @@ public class RxJavaTestActivity extends AppCompatActivity {
 
       @Override
       public void onNext(EsgResponse value) {
-        Log.e(TAG, "onNext: value=" + value.toString());
+//        Log.e(TAG, "onNext: value=" + value.toString());
+        String s = value.toString();
+        Logger.e(s);
       }
 
       @Override

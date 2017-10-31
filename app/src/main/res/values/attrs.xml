@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MySeekBar">
-        <attr name="textsize" format="dimension" />
-        <attr name="textcolor" format="color" />
-        <attr name="img" format="reference" />
+        <attr name="textsize" format="dimension"/>
+        <attr name="textcolor" format="color"/>
+        <attr name="img" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="pile">
+        <attr name="interval" format="dimension"/>
+        <attr name="sizeRatio" format="float"/>
+        <attr name="scaleStep" format="float"/>
+        <attr name="displayCount" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CardSlider">
+        <!-- Active card offset from start of RecyclerView. Default value is 50dp. -->
+        <attr name="activeCardLeftOffset" format="dimension"/>
+        <!-- Card width. Default value is 148dp. -->
+        <attr name="cardWidth" format="dimension"/>
+        <!-- Distance between cards. Default value is 12dp. -->
+        <attr name="cardsGap" format="dimension"/>
+        <!-- ViewUpdater implementation class. If not set, DefaultViewUpdater class is used. -->
+        <attr name="viewUpdater" format="string"/>
+    </declare-styleable>
+
+    <!--随机数字文本-->
+    <declare-styleable name="RdTextView">
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+
+    <!--带文字的图片-->
+    <declare-styleable name="TextImageView">
+        <attr name="title_text" format="string"/>
+        <attr name="title_text_size" format="dimension"/>
+        <attr name="title_text_color" format="color"/>
+        <attr name="image" format="reference"/>
+        <attr name="image_scale_type">
+            <enum name="fitXY" value="0"/>
+            <enum name="center" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!--交替圆形加载条-->
+    <declare-styleable name="CircleProgressBar">
+        <attr name="first_color" format="color"/>
+        <attr name="second_color" format="color"/>
+        <attr name="circle_width" format="dimension"/>
+        <attr name="speed" format="integer"/>
     </declare-styleable>
 </resources>

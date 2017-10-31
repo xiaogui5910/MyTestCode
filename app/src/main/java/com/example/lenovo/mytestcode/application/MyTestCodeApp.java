@@ -1,34 +1,54 @@
 package com.example.lenovo.mytestcode.application;
 
 import android.app.Application;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.lenovo.mytestcode.BuildConfig;
 import com.example.lenovo.mytestcode.db.greendao.DaoMaster;
 import com.example.lenovo.mytestcode.db.greendao.DaoSession;
-import com.example.lenovo.mytestcode.utils.AndroidLogAdapter;
 import com.example.lenovo.mytestcode.utils.Utils;
-import com.orhanobut.logger.LogLevel;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.PrettyFormatStrategy;
 
 /**
  * Created by lenovo on 2017/3/22.
  */
 
 public class MyTestCodeApp extends Application {
-  private static final String YOUR_TAG = "MyTestCode";
+  private static final String MY_TAG = "MyTestCode";
   private static DaoSession daoSession;
+  public static Context context;
 
   @Override
   public void onCreate() {
     super.onCreate();
+    this.context =this;
+    FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
+            .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
+            .methodCount(2)         // (Optional) How many method line to show. Default 2
+//            .methodOffset(7)        // (Optional) Hides internal method calls up to offset. Default 5
+//            .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
+            .tag(MY_TAG)   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+            .build();
+//    Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+//    Logger.addLogAdapter(new AndroidLogAdapter());
+    Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy){
+      @Override
+      public boolean isLoggable(int priority, String tag) {
+        return BuildConfig.DEBUG;
+      }
+    });
 
-    Logger
-            .init(YOUR_TAG)                 // default PRETTYLOGGER or use just init()
-            .methodCount(3)                 // default 2
-            .hideThreadInfo()               // default shown
-            .logLevel(LogLevel.NONE)        // default LogLevel.FULL
-            .methodOffset(2)                // default 0
-            .logAdapter(new AndroidLogAdapter()); //default AndroidLogAdapter
+    //TODO: More information will be added later
+//    Logger.addLogAdapter(new DiskLogAdapter());
+//    FormatStrategy formatStrategy1 = CsvFormatStrategy.newBuilder()
+//            .tag("custom")
+//            .build();
+//
+//    Logger.addLogAdapter(new DiskLogAdapter(formatStrategy1));
 
     //配置数据库
     setupDatabase();

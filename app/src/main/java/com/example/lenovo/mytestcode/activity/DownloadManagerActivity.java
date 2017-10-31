@@ -23,7 +23,10 @@ import android.widget.TextView;
 
 import com.example.lenovo.mytestcode.R;
 import com.example.lenovo.mytestcode.utils.ToastUtil;
+import com.example.lenovo.mytestcode.widget.WaveProgress;
 import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -48,6 +51,7 @@ public class DownloadManagerActivity extends AppCompatActivity {
   private DownloadManager downloadManager;
   private long downloadId;
   private DownloadManager.Request request;
+  private Random random;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,16 @@ public class DownloadManagerActivity extends AppCompatActivity {
     mFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
     mFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
     registerReceiver(networkReceiver, mFilter);
+
+    random = new Random();
+    final WaveProgress waveProgress = (WaveProgress) findViewById(R.id.wave_progress_bar);
+    waveProgress.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        waveProgress.setValue(random.nextFloat() * waveProgress.getMaxValue());
+      }
+    });
+
   }
 
   @Override

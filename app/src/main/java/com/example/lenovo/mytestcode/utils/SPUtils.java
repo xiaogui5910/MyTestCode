@@ -3,6 +3,8 @@ package com.example.lenovo.mytestcode.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.lenovo.mytestcode.application.MyTestCodeApp;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -53,7 +55,7 @@ public class SPUtils {
    */
   public static Object get(Context context, String key, Object defaultObject) {
     if (context==null){
-      context = MyTestCodeApplication.context;
+      context = MyTestCodeApp.context;
     }
     SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
             Context.MODE_PRIVATE);

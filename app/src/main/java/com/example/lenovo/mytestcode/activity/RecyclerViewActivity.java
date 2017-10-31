@@ -62,7 +62,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     //给recyclerview设置adapter
     rvTest1.setAdapter(adapter);
-
     //设置空布局
     adapter.setEmptyView(LayoutInflater.from(this).inflate(R.layout.emptyview, (ViewGroup) rvTest1.getParent(),false));
 

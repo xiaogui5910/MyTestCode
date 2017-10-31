@@ -1,6 +1,6 @@
 package com.example.lenovo.mytestcode.network.net;
 
-import com.example.lenovo.mytestcode.utils.MyTestCodeApplication;
+import com.example.lenovo.mytestcode.application.MyTestCodeApp;
 import com.example.lenovo.mytestcode.utils.SPUtils;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class SaveCookiesInterceptor implements Interceptor {
       for (String header : originalResponse.headers("Set-Cookie")) {
         cookies.add(header);
       }
-      SPUtils.put(MyTestCodeApplication.context,"sp_cookies",cookies);
+      SPUtils.put(MyTestCodeApp.context,"sp_cookies",cookies);
     }
 
     return originalResponse;
