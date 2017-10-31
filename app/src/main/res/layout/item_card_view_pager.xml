@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_main_item"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!--卡片-->
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:id="@+id/rl_card_item"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="45.8%sh"
+            app:layout_marginRightPercent="1.4%sw"
+            app:layout_widthPercent="18.5%sw">
+
+            <!--图片-->
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pic_1"
+                />
+
+            <!--遮罩图层-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.74"
+                android:background="@drawable/shape_main_layer"
+                />
+
+            <!--主标题-->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_desc"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="title"
+                android:textColor="@android:color/white"
+                app:layout_marginLeftPercent="3%sw"
+                app:layout_textSizePercent="3.8%sh"/>
+
+            <!--副标题-->
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="desc"
+                android:textColor="@android:color/white"
+                app:layout_marginBottomPercent="3.5%sh"
+                app:layout_marginLeftPercent="3%sw"
+                app:layout_marginTopPercent="1.2%sh"
+                app:layout_textSizePercent="3.5%sh"/>
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+
+        <!--卡片-->
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:id="@+id/rl_card_item1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            app:layout_heightPercent="45.8%sh"
+            app:layout_marginRightPercent="1.4%sw"
+            app:layout_widthPercent="18.5%sw">
+
+            <!--图片-->
+            <ImageView
+                android:id="@+id/iv_image1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pic_1"
+                />
+
+            <!--遮罩图层-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.74"
+                android:background="@drawable/shape_main_layer"
+                />
+
+            <!--主标题-->
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_desc1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="title1"
+                android:textColor="@android:color/white"
+                app:layout_marginLeftPercent="3%sw"
+                app:layout_textSizePercent="3.8%sh"/>
+
+            <!--副标题-->
+            <TextView
+                android:id="@+id/tv_desc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="desc1"
+                android:textColor="@android:color/white"
+                app:layout_marginBottomPercent="3.5%sh"
+                app:layout_marginLeftPercent="3%sw"
+                app:layout_marginTopPercent="1.2%sh"
+                app:layout_textSizePercent="3.5%sh"/>
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+
+        <!--卡片-->
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:id="@+id/rl_card_item2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            app:layout_heightPercent="45.8%sh"
+            app:layout_marginRightPercent="1.4%sw"
+            app:layout_widthPercent="18.5%sw">
+
+            <!--图片-->
+            <ImageView
+                android:id="@+id/iv_image2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pic_1"
+                />
+
+            <!--遮罩图层-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.74"
+                android:background="@drawable/shape_main_layer"
+                />
+
+            <!--主标题-->
+            <TextView
+                android:id="@+id/tv_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_desc2"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="title2"
+                android:textColor="@android:color/white"
+                app:layout_marginLeftPercent="3%sw"
+                app:layout_textSizePercent="3.8%sh"/>
+
+            <!--副标题-->
+            <TextView
+                android:id="@+id/tv_desc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="desc2"
+                android:textColor="@android:color/white"
+                app:layout_marginBottomPercent="3.5%sh"
+                app:layout_marginLeftPercent="3%sw"
+                app:layout_marginTopPercent="1.2%sh"
+                app:layout_textSizePercent="3.5%sh"/>
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+</com.zhy.android.percent.support.PercentRelativeLayout>

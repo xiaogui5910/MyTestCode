@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fed255"
+    android:orientation="vertical"
+    tools:context="com.example.lenovo.mytestcode.activity.CustomViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.lenovo.mytestcode.widget.PostManView
+                android:id="@+id/postmanview"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                />
+
+            <com.example.lenovo.mytestcode.widget.CircleProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:circle_width="5dp"
+                app:first_color="@android:color/holo_red_dark"
+                app:second_color="@android:color/holo_green_light"
+                app:speed="20"/>
+        </LinearLayout>
+
+        <com.example.lenovo.mytestcode.widget.RdTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            custom:text="9527"
+            custom:text_color="@android:color/holo_green_light"
+            custom:text_size="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.lenovo.mytestcode.widget.TextImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:padding="10dp"
+                app:image="@drawable/pic_1"
+                app:image_scale_type="fitXY"
+                app:title_text="pic_1"
+                app:title_text_color="@android:color/holo_red_dark"
+                app:title_text_size="20sp"/>
+
+            <com.example.lenovo.mytestcode.widget.PieView
+                android:id="@+id/pieView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/random"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="random"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.lenovo.mytestcode.widget.CheckView
+                android:id="@+id/check_view"
+                android:layout_width="300dp"
+                android:layout_height="300dp"/>
+
+            <Button
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="check"/>
+
+            <Button
+                android:id="@+id/uncheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="uncheck"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/leaf_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:visibility="gone">
+
+            <com.example.lenovo.mytestcode.widget.LeafLoadingView
+                android:id="@+id/leaf_loading_view"
+                android:layout_width="302dp"
+                android:layout_height="61dp"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:id="@+id/fan_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="35dp"
+                android:src="@drawable/fengshan"/>
+        </RelativeLayout>
+
+        <com.example.lenovo.mytestcode.widget.RadarView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@android:color/black"/>
+
+        <com.example.lenovo.mytestcode.widget.CircleArrowView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_change_img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/pic_6"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="色调"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <SeekBar
+                android:id="@+id/sb_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="饱和度"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <SeekBar
+                android:id="@+id/sb_saturation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="亮度"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <SeekBar
+                android:id="@+id/sb_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"/>
+        </LinearLayout>
+
+        <com.example.lenovo.mytestcode.widget.BitmapShaderView
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+
+        <com.example.lenovo.mytestcode.widget.ReflectImageView
+            android:layout_width="400dp"
+            android:layout_height="400dp"/>
+        <com.example.lenovo.mytestcode.widget.MyCircleImageView
+            android:src="@drawable/pic_1"
+            android:layout_width="400dp"
+            android:layout_height="300dp"/>
+
+    </LinearLayout>
+</ScrollView>

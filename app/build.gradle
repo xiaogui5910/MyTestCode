@@ -66,4 +66,5 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.3.0'
     compile 'com.zhy:percent-support-extends:1.1.1'
     testCompile 'junit:junit:4.12'
+    classpath "com.tinkerpatch.sdk:tinkerpatch-gradle-plugin:1.1.4"
 }
