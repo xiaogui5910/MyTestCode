@@ -130,7 +130,8 @@
         </activity>
         <activity android:name=".activity.CusImageActivity">
         </activity>
-        <activity android:name=".activity.CardViewPagerActivity"
+        <activity
+            android:name=".activity.CardViewPagerActivity"
             android:screenOrientation="landscape">
         </activity>
     </application>

@@ -113,8 +113,8 @@ public class LocationUtils {
 //      lat =39.33;
 //      lng=117.83;
       //江苏 启东
-      lat =31.80;
-      lng=121.66;
+//      lat =31.80;
+//      lng=121.66;
 
       Log.e(TAG, "updateWithNewLocation:纬度= "+lat+",经度="+lng);
     } else {

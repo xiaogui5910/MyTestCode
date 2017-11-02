@@ -28,6 +28,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lenovo.mytestcode.R;
+import com.example.lenovo.mytestcode.manager.GPSLocationListener;
+import com.example.lenovo.mytestcode.manager.GPSLocationManager;
+import com.example.lenovo.mytestcode.manager.GPSProviderStatus;
 import com.example.lenovo.mytestcode.utils.LocationUtils;
 import com.example.lenovo.mytestcode.utils.ToastUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
   private ArrayList<String> list;
   private ActionBarDrawerToggle toggle;
   private LocationManager locationManager;
+  private GPSLocationManager gpsLocationManager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
   private void initData() {
     list = new ArrayList<>();
     for (int i = 'A'; i < 'Z'; i++) {
-      list.add("" + (char) i);
+      list.add("" + (char) i+"修复后显示");
     }
     List<String> testList = new ArrayList<>();
     LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
@@ -114,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
     Log.e(TAG, "initData: ---------------------------------------------------------");
     Log.e(TAG, "initData: testList=" + testList.toString());
 
+//    gpsLocationManager = GPSLocationManager.getInstances(this);
+//    //开启定位
+//    gpsLocationManager.start(new MyListener());
 
     locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -148,12 +155,14 @@ public class MainActivity extends AppCompatActivity {
     criterria.setPowerRequirement(Criteria.ACCURACY_LOW);
     String provider = locationManager.getBestProvider(criterria, true);
     Location lastKnownLocation = locationManager.getLastKnownLocation(provider);
-    Log.e(TAG, "onLocationChanged: lat=" + lastKnownLocation.getLatitude() + ", lon=" +
-            lastKnownLocation.getLongitude());
-//    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-//            10000,          // 10-second interval.
-//            10,             // 10 meters.
-//            listener);
+    if (lastKnownLocation!=null){
+      Log.e(TAG, "onLocationChanged: lat=" + lastKnownLocation.getLatitude() + ", lon=" +
+              lastKnownLocation.getLongitude());
+    }
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+            10000,          // 10-second interval.
+            10,             // 10 meters.
+            listener);
     String cnBylocation = new LocationUtils().getCNBylocation(this);
     Log.e(TAG, "initData: city=" + cnBylocation);
 
@@ -162,7 +171,9 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onStop() {
     super.onStop();
-    locationManager.removeUpdates(listener);
+    if (locationManager!=null){
+      locationManager.removeUpdates(listener);
+    }
   }
 
   private final LocationListener listener = new LocationListener() {
@@ -191,9 +202,48 @@ public class MainActivity extends AppCompatActivity {
     }
   };
 
+  class MyListener implements GPSLocationListener {
+
+    @Override
+    public void UpdateLocation(Location location) {
+      if (location != null) {
+        Log.e(TAG, "UpdateLocation: "+"经度：" + location.getLongitude() + "\n纬度：" + location.getLatitude());
+      }
+    }
+
+    @Override
+    public void UpdateStatus(String provider, int status, Bundle extras) {
+      if ("gps" == provider) {
+        ToastUtil.showToast("定位类型：" + provider);
+      }
+    }
+
+    @Override
+    public void UpdateGPSProviderStatus(int gpsStatus) {
+      switch (gpsStatus) {
+        case GPSProviderStatus.GPS_ENABLED:
+          ToastUtil.showToast("GPS开启");
+          break;
+        case GPSProviderStatus.GPS_DISABLED:
+          ToastUtil.showToast("GPS关闭");
+          break;
+        case GPSProviderStatus.GPS_OUT_OF_SERVICE:
+          ToastUtil.showToast("GPS不可用");
+          break;
+        case GPSProviderStatus.GPS_TEMPORARILY_UNAVAILABLE:
+          ToastUtil.showToast("GPS暂时不可用");
+          break;
+        case GPSProviderStatus.GPS_AVAILABLE:
+          ToastUtil.showToast("GPS可用啦");
+          break;
+      }
+    }
+  }
+
   private void initView() {
     rvTest.setLayoutManager(new LinearLayoutManager(this));
-    rvTest.setAdapter(new MyAdapter());
+    MyAdapter adapter = new MyAdapter();
+    rvTest.setAdapter(adapter);
     rvTest.addItemDecoration(new DividerItemDecoration(this,
             LinearLayoutManager.VERTICAL));
 
@@ -310,7 +360,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-      holder.tvItem.setText(list.get(position));
+      final String text = list.get(position);
+      holder.tvItem.setText(text);
+      holder.tvItem.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          ToastUtil.showToast(text);
+        }
+      });
     }
 
     @Override

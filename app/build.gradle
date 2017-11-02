@@ -1,7 +1,26 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
+apply from: 'tinkerpatch.gradle'
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -9,16 +28,16 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     //greendao配置
     greendao {
         //版本号，升级时可配置
@@ -33,12 +52,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     // add library
     //    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-//    compile "io.reactivex.rxjava2:rxjava:2.1.0"
+    //    compile "io.reactivex.rxjava2:rxjava:2.1.0"
     //    compile "io.reactivex:rxjava:1.2.9"
-
     //retrofit
     //Gson converter
     //RxJava2 Adapter
@@ -66,5 +83,6 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.3.0'
     compile 'com.zhy:percent-support-extends:1.1.1'
     testCompile 'junit:junit:4.12'
-    classpath "com.tinkerpatch.sdk:tinkerpatch-gradle-plugin:1.1.4"
+    provided 'com.tinkerpatch.tinker:tinker-android-anno:1.8.0'
+    compile 'com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.8'
 }
