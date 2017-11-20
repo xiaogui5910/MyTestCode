@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
           R.id.scene_custom, R.id.clip_viewPager, R.id.blur, R.id.group_recyclerview, R.id.custom_tabView, R.id.slide_menu,
           R.id.test_db, R.id.random_num, R.id.slide_viewpager, R.id.palette_imageview, R.id.downloadmanager, R.id.rxjava,
           R.id.weixin_bottom, R.id.wave_view, R.id.pie_layout, R.id.card_slider, R.id.zxing, R.id.custom_view, R.id.custom_image,
-          R.id.card_view_pager})
+          R.id.card_view_pager,R.id.test_annotation})
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.recyclerView:
@@ -341,6 +341,9 @@ public class MainActivity extends AppCompatActivity {
         break;
       case R.id.card_view_pager:
         goToNext(CardViewPagerActivity.class);
+        break;
+      case R.id.test_annotation:
+        goToNext(TestAnnotationActivity.class);
         break;
     }
   }

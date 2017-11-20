@@ -174,7 +174,10 @@
                 android:id="@+id/second_fix"
                 style="@style/left_menu_text"
                 android:text="第二次修复"/>
-
+            <TextView
+                android:id="@+id/test_annotation"
+                style="@style/left_menu_text"
+                android:text="TestAnnotation"/>
 
         </LinearLayout>
 

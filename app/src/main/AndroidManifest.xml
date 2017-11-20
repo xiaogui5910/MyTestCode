@@ -134,6 +134,8 @@
             android:name=".activity.CardViewPagerActivity"
             android:screenOrientation="landscape">
         </activity>
+        <activity android:name=".activity.TestAnnotationActivity">
+        </activity>
     </application>
 
 </manifest>

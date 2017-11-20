@@ -82,7 +82,7 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.makeramen:roundedimageview:2.3.0'
     compile 'com.zhy:percent-support-extends:1.1.1'
+    compile 'com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.8'
     testCompile 'junit:junit:4.12'
     provided 'com.tinkerpatch.tinker:tinker-android-anno:1.8.0'
-    compile 'com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.8'
 }
