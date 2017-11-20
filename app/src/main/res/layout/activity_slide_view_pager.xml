@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:gravity="center_horizontal"
+    android:background="@drawable/pic_6"
     android:layout_height="match_parent"
     tools:context="com.example.lenovo.mytestcode.activity.SlideViewPagerActivity">
 
@@ -18,4 +19,12 @@
         android:id="@+id/ll_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:text="点击"
+        android:textSize="30sp"
+        android:textColor="@color/red"
+        android:id="@+id/iv_show"
+        android:layout_width="200dp"
+        android:background="@drawable/pic_1"
+        android:layout_height="60dp"/>
 </LinearLayout>

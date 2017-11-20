@@ -1,11 +1,15 @@
 package com.example.lenovo.mytestcode.activity;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,15 +26,17 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SlideViewPagerActivity extends AppCompatActivity {
+public class SlideViewPagerActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-  private static final String TAG ="SlideViewPagerActivity" ;
+  private static final String TAG = "SlideViewPagerActivity";
   @Bind(R.id.viewpager)
   ViewPager viewpager;
   public final static int grid_page_num = 10;
   public final static int grid_col_num = 5;
   @Bind(R.id.ll_point)
   LinearLayout llPoint;
+  @Bind(R.id.iv_show)
+  Button ivShow;
   private List<GridView> gridList;
   private int lastPosition;
 
@@ -64,13 +70,14 @@ public class SlideViewPagerActivity extends AppCompatActivity {
     }
 
     int tempCount = dataList.size() / grid_page_num;
-    Log.e(TAG, "initData: tempCount="+tempCount );
-    int pageCount =  dataList.size() % grid_page_num == 0 ? tempCount : tempCount + 1;
-    Log.e(TAG, "initData: pageCount="+pageCount );
+    Log.e(TAG, "initData: tempCount=" + tempCount);
+    int pageCount = dataList.size() % grid_page_num == 0 ? tempCount : tempCount + 1;
+    Log.e(TAG, "initData: pageCount=" + pageCount);
     for (int i = 0; i < pageCount; i++) {
       GridView gridView = new GridView(this);
       gridView.setNumColumns(grid_col_num);
       GridViewAdapter gridViewAdapter = new GridViewAdapter(dataList, i);
+      gridView.setOnItemClickListener(this);
       gridView.setAdapter(gridViewAdapter);
       gridList.add(gridView);
 
@@ -109,7 +116,44 @@ public class SlideViewPagerActivity extends AppCompatActivity {
 
       }
     });
+//    processBitmap();
   }
 
 
+  @Override
+  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    int realPosition = position + viewpager.getCurrentItem() * grid_page_num;
+    Log.e(TAG, "onItemClick: position=" + position);
+  processBitmap();
+  }
+
+  private void processBitmap() {
+//    ivShow.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//      @Override
+//      public void onGlobalLayout() {
+//        ivShow.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        ivShow.setVisibility(View.INVISIBLE);
+        View rootView = viewpager.getRootView();
+        rootView.setDrawingCacheEnabled(true);
+        rootView.buildDrawingCache();
+        Bitmap drawingCache = rootView.getDrawingCache();
+
+        int[] location=new int[2];
+        ivShow.getLocationOnScreen(location);
+        int x = location[0];
+        int y = location[1];
+        Log.e(TAG, "onItemClick: location="+location[0] +","+location[1]);
+//    int x = (int) ivShow.getX();
+//    int y = ivShow.getTop();
+        int width = ivShow.getWidth();
+        int height = ivShow.getHeight();
+        Log.e(TAG, "onItemClick: x,y,w,h="+x+","+y+","+width+","+height );
+        Bitmap bitmap = Bitmap.createBitmap(drawingCache, x, y, width, height);
+
+        ivShow.setBackground(new BitmapDrawable(bitmap));
+        ivShow.setVisibility(View.VISIBLE);
+//      }
+//    });
+
+  }
 }

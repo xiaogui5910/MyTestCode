@@ -61,7 +61,6 @@ public class CustomImageView extends ImageView {
         mPaintPath.setXfermode(mPorterDuffXfermode);
 
         mPaintBitmap = new Paint(Paint.ANTI_ALIAS_FLAG);
-
     }
 
 
