@@ -32,6 +32,7 @@ import com.example.lenovo.mytestcode.manager.GPSLocationListener;
 import com.example.lenovo.mytestcode.manager.GPSLocationManager;
 import com.example.lenovo.mytestcode.manager.GPSProviderStatus;
 import com.example.lenovo.mytestcode.utils.LocationUtils;
+import com.example.lenovo.mytestcode.utils.NdkTestUtils;
 import com.example.lenovo.mytestcode.utils.ToastUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -71,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
     initView();
     initLeft();
   }
-
   private void initLeft() {
   }
 
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
   private void initData() {
     list = new ArrayList<>();
     for (int i = 'A'; i < 'Z'; i++) {
-      list.add("" + (char) i+"修复后显示");
+      list.add("" + (char) i+"修复后显示"+ NdkTestUtils.getStringFromC());
     }
     List<String> testList = new ArrayList<>();
     LinkedHashMap<Integer, String> map = new LinkedHashMap<>();

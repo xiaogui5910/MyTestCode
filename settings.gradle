@@ -1,1 +1,1 @@
-include ':app', ':jianshu-weixinbottombar-master', ':view_texst', ':testscanzbar3'
+include ':app'
