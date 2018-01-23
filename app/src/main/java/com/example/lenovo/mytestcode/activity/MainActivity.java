@@ -10,6 +10,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -36,6 +37,9 @@ import com.example.lenovo.mytestcode.utils.NdkTestUtils;
 import com.example.lenovo.mytestcode.utils.ToastUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -165,6 +169,22 @@ public class MainActivity extends AppCompatActivity {
             listener);
     String cnBylocation = new LocationUtils().getCNBylocation(this);
     Log.e(TAG, "initData: city=" + cnBylocation);
+
+    try {
+      String path= Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"ijk_error.txt";
+      File file= new File(path);
+      FileInputStream is = new FileInputStream(file);
+      int len = (int) file.length();
+      Log.e(TAG, "onCreate: len="+len );
+      byte[] buffer= new byte[len];
+      while ((is.read(buffer, 0, len) != -1) ) {
+        Log.e(TAG, "buffer="+new String(buffer));
+      }
+      is.close();
+    } catch (IOException ioe) {
+      Log.e(TAG, "IOException: "+ioe.toString());
+      ioe.printStackTrace();
+    }
 
   }
 
