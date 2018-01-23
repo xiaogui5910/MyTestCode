@@ -6,7 +6,7 @@
 #include "com_example_lenovo_mytestcode_utils_NdkTestUtils.h"
 #include <string.h>
 
-JNIEXPORT jstringJNICALL Java_com_example_lenovo_mytestcode_utils_NdkTestUtils_getStringFromC
+JNIEXPORT jstring JNICALL Java_com_example_lenovo_mytestcode_utils_NdkTestUtils_getStringFromC
         (JNIEnv *env, jobject obj) {
     return (*env)->NewStringUTF(env, "这里是来自c的string");
 }

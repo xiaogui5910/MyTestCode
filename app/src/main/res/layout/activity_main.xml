@@ -178,6 +178,10 @@
                 android:id="@+id/test_annotation"
                 style="@style/left_menu_text"
                 android:text="TestAnnotation"/>
+            <TextView
+                android:id="@+id/level_progress"
+                style="@style/left_menu_text"
+                android:text="LevelProgressBar"/>
 
         </LinearLayout>
 
