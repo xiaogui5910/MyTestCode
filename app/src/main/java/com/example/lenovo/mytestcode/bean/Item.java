@@ -2,9 +2,6 @@ package com.example.lenovo.mytestcode.bean;
 
 import java.io.Serializable;
 
-/**
- * Created by zhouweilong on 15/12/14.
- */
 public class Item implements Serializable{
     private int position;
     private int img;
@@ -42,4 +39,14 @@ public class Item implements Serializable{
     public void setPosition(int position) {
         this.position = position;
     }
+
+  @Override
+  public String toString() {
+    return "Item{" +
+            "position=" + position +
+            ", img=" + img +
+            ", name='" + name + '\'' +
+            ", isSelected=" + isSelected +
+            '}';
+  }
 }

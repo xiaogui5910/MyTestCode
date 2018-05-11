@@ -19,6 +19,7 @@ import com.example.lenovo.mytestcode.adapter.GridViewAdapter;
 import com.example.lenovo.mytestcode.adapter.SlideViewPagerAdapter;
 import com.example.lenovo.mytestcode.bean.Function;
 import com.example.lenovo.mytestcode.utils.DensityUtils;
+import com.example.lenovo.mytestcode.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,28 +58,34 @@ public class SlideViewPagerActivity extends AppCompatActivity implements Adapter
     SlideViewPagerAdapter adapter = new SlideViewPagerAdapter();
 
     List<Function> dataList = new ArrayList<>();
+    List<Function> showList = new ArrayList<>();
     gridList = new ArrayList<>();
 
     if (dataList.size() > 0) {
       dataList.clear();
     }
 
-    for (int i = 0; i < 60; i++) {
+    for (int i = 0; i < 38; i++) {
       Function function = new Function();
       function.setName("第" + i + "个");
       dataList.add(function);
     }
 
-    int tempCount = dataList.size() / grid_page_num;
+//    for (int i = 0; i < 3; i++) {
+//    }
+    showList.addAll(dataList);
+
+    int tempCount = showList.size() / grid_page_num;
     Log.e(TAG, "initData: tempCount=" + tempCount);
-    int pageCount = dataList.size() % grid_page_num == 0 ? tempCount : tempCount + 1;
+    int pageCount = showList.size() % grid_page_num == 0 ? tempCount : tempCount + 1;
     Log.e(TAG, "initData: pageCount=" + pageCount);
     for (int i = 0; i < pageCount; i++) {
       GridView gridView = new GridView(this);
       gridView.setNumColumns(grid_col_num);
-      GridViewAdapter gridViewAdapter = new GridViewAdapter(dataList, i);
+      GridViewAdapter gridViewAdapter = new GridViewAdapter(showList, i);
       gridView.setOnItemClickListener(this);
-      gridView.setAdapter(gridViewAdapter);
+      gridView.setAdapter
+              (gridViewAdapter);
       gridList.add(gridView);
 
       ImageView iv = new ImageView(this);
@@ -123,8 +130,10 @@ public class SlideViewPagerActivity extends AppCompatActivity implements Adapter
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     int realPosition = position + viewpager.getCurrentItem() * grid_page_num;
-    Log.e(TAG, "onItemClick: position=" + position);
-  processBitmap();
+    Function function = (Function) parent.getItemAtPosition(position);
+    ToastUtil.showToast(function.getName());
+    Log.e(TAG, "onItemClick: position=" + position+",realPosition="+realPosition);
+    processBitmap();
   }
 
   private void processBitmap() {
@@ -132,26 +141,26 @@ public class SlideViewPagerActivity extends AppCompatActivity implements Adapter
 //      @Override
 //      public void onGlobalLayout() {
 //        ivShow.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        ivShow.setVisibility(View.INVISIBLE);
-        View rootView = viewpager.getRootView();
-        rootView.setDrawingCacheEnabled(true);
-        rootView.buildDrawingCache();
-        Bitmap drawingCache = rootView.getDrawingCache();
+    ivShow.setVisibility(View.INVISIBLE);
+    View rootView = viewpager.getRootView();
+    rootView.setDrawingCacheEnabled(true);
+    rootView.buildDrawingCache();
+    Bitmap drawingCache = rootView.getDrawingCache();
 
-        int[] location=new int[2];
-        ivShow.getLocationOnScreen(location);
-        int x = location[0];
-        int y = location[1];
-        Log.e(TAG, "onItemClick: location="+location[0] +","+location[1]);
+    int[] location = new int[2];
+    ivShow.getLocationOnScreen(location);
+    int x = location[0];
+    int y = location[1];
+    Log.e(TAG, "onItemClick: location=" + location[0] + "," + location[1]);
 //    int x = (int) ivShow.getX();
 //    int y = ivShow.getTop();
-        int width = ivShow.getWidth();
-        int height = ivShow.getHeight();
-        Log.e(TAG, "onItemClick: x,y,w,h="+x+","+y+","+width+","+height );
-        Bitmap bitmap = Bitmap.createBitmap(drawingCache, x, y, width, height);
+    int width = ivShow.getWidth();
+    int height = ivShow.getHeight();
+    Log.e(TAG, "onItemClick: x,y,w,h=" + x + "," + y + "," + width + "," + height);
+    Bitmap bitmap = Bitmap.createBitmap(drawingCache, x, y, width, height);
 
-        ivShow.setBackground(new BitmapDrawable(bitmap));
-        ivShow.setVisibility(View.VISIBLE);
+    ivShow.setBackground(new BitmapDrawable(bitmap));
+    ivShow.setVisibility(View.VISIBLE);
 //      }
 //    });
 

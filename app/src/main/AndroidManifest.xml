@@ -138,6 +138,8 @@
         </activity>
         <activity android:name=".activity.LevelProgressBarActivity">
         </activity>
+        <activity android:name=".activity.ListViewCheckBoxActivity">
+        </activity>
     </application>
 
 </manifest>

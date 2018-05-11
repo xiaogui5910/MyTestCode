@@ -65,7 +65,6 @@ dependencies {
     //Gson converter
     //RxJava2 Adapter
     //okhttp
-    
 
     //java注解
     compile 'com.jakewharton:butterknife:7.0.1'

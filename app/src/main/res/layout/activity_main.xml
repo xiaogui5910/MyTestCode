@@ -182,6 +182,10 @@
                 android:id="@+id/level_progress"
                 style="@style/left_menu_text"
                 android:text="LevelProgressBar"/>
+            <TextView
+                android:id="@+id/listView_checkBox"
+                style="@style/left_menu_text"
+                android:text="ListViewCheckBox"/>
 
         </LinearLayout>
 
