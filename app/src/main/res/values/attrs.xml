@@ -61,4 +61,15 @@
         <attr name="progressHeight" format="dimension"/>
         <attr name="progressSpace" format="dimension"/>
     </declare-styleable>
+
+    <!--圆角图片-->
+    <declare-styleable name="CornerTranslucentImageView">
+        <attr name="radius" format="dimension"/>
+        <attr name="startColor" format="color"/>
+        <attr name="endColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="round_radius" format="dimension"/>
+    </declare-styleable>
 </resources>

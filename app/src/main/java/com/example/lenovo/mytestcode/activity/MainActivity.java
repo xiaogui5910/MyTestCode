@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
     initView();
     initLeft();
   }
+
   private void initLeft() {
   }
 
@@ -93,9 +94,21 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void initData() {
+
+    String s_str = "abbabbbbcab";
+    String t_str = "bbcab";
+
+    int index = s_str.indexOf(t_str);
+    Log.e(TAG, "initData: index="+index );
+
+//    int[] next = getNextArray(t_str);
+//    Log.e(TAG, "initData: t_str=" + t_str + "\nnext=" + Arrays.toString(next));
+
+    Log.e(TAG, "initData: s_str="+s_str+",t_str="+t_str+",kmp_index="+kmpIndex(s_str,t_str) );
+
     list = new ArrayList<>();
     for (int i = 'A'; i < 'Z'; i++) {
-      list.add("" + (char) i+"修复后显示"+ NdkTestUtils.getStringFromC());
+      list.add("" + (char) i + "修复后显示" + NdkTestUtils.getStringFromC());
     }
     List<String> testList = new ArrayList<>();
     LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
@@ -159,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
     criterria.setPowerRequirement(Criteria.ACCURACY_LOW);
     String provider = locationManager.getBestProvider(criterria, true);
     Location lastKnownLocation = locationManager.getLastKnownLocation(provider);
-    if (lastKnownLocation!=null){
+    if (lastKnownLocation != null) {
       Log.e(TAG, "onLocationChanged: lat=" + lastKnownLocation.getLatitude() + ", lon=" +
               lastKnownLocation.getLongitude());
     }
@@ -171,27 +184,76 @@ public class MainActivity extends AppCompatActivity {
     Log.e(TAG, "initData: city=" + cnBylocation);
 
     try {
-      String path= Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"ijk_error.txt";
-      File file= new File(path);
+      String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ijk_error.txt";
+      File file = new File(path);
       FileInputStream is = new FileInputStream(file);
       int len = (int) file.length();
-      Log.e(TAG, "onCreate: len="+len );
-      byte[] buffer= new byte[len];
-      while ((is.read(buffer, 0, len) != -1) ) {
-        Log.e(TAG, "buffer="+new String(buffer));
+      Log.e(TAG, "onCreate: len=" + len);
+      byte[] buffer = new byte[len];
+      while ((is.read(buffer, 0, len) != -1)) {
+        Log.e(TAG, "buffer=" + new String(buffer));
       }
       is.close();
     } catch (IOException ioe) {
-      Log.e(TAG, "IOException: "+ioe.toString());
+      Log.e(TAG, "IOException: " + ioe.toString());
       ioe.printStackTrace();
     }
 
   }
 
+  private int[] getNextArray(String t_str) {
+    if (t_str == null) {
+      return new int[255];
+    }
+    char[] t = t_str.toCharArray();
+    int[] next = new int[t.length];
+
+    int i, j;
+    i = 0;
+    j = -1;
+    next[0] = -1;
+
+    while (i < t_str.length() - 1) {
+      if (j == -1 || t[i] == t[j]) {
+        i++;
+        j++;
+        if (t[i] != t[j]) {
+          next[i] = j;
+        } else {
+          next[i] = next[j];
+        }
+      } else {
+        j = next[j];
+      }
+    }
+    return next;
+  }
+
+  private int kmpIndex(String s_str, String t_str) {
+    int[] next = getNextArray(t_str);
+    char[] s = s_str.toCharArray();
+    char[] t = t_str.toCharArray();
+    int i = 0;
+    int j = 0;
+    while (i <= s_str.length() - 1 && j <= t_str.length() - 1) {
+      if (j == -1 || s[i] == t[j]) {
+        i++;
+        j++;
+      } else {
+        j = next[j];
+      }
+    }
+    if (j < t_str.length()) {
+      return -1;
+    } else {
+      return i - t_str.length();
+    }
+  }
+
   @Override
   protected void onStop() {
     super.onStop();
-    if (locationManager!=null){
+    if (locationManager != null) {
       locationManager.removeUpdates(listener);
     }
   }
@@ -227,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void UpdateLocation(Location location) {
       if (location != null) {
-        Log.e(TAG, "UpdateLocation: "+"经度：" + location.getLongitude() + "\n纬度：" + location.getLatitude());
+        Log.e(TAG, "UpdateLocation: " + "经度：" + location.getLongitude() + "\n纬度：" + location.getLatitude());
       }
     }
 
@@ -274,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
           R.id.scene_custom, R.id.clip_viewPager, R.id.blur, R.id.group_recyclerview, R.id.custom_tabView, R.id.slide_menu,
           R.id.test_db, R.id.random_num, R.id.slide_viewpager, R.id.palette_imageview, R.id.downloadmanager, R.id.rxjava,
           R.id.weixin_bottom, R.id.wave_view, R.id.pie_layout, R.id.card_slider, R.id.zxing, R.id.custom_view, R.id.custom_image,
-          R.id.card_view_pager,R.id.test_annotation,R.id.level_progress,R.id.listView_checkBox})
+          R.id.card_view_pager, R.id.test_annotation, R.id.level_progress, R.id.listView_checkBox})
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.recyclerView:
