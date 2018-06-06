@@ -99,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
     String t_str = "bbcab";
 
     int index = s_str.indexOf(t_str);
-    Log.e(TAG, "initData: index="+index );
+    Log.e(TAG, "initData: index=" + index);
 
 //    int[] next = getNextArray(t_str);
 //    Log.e(TAG, "initData: t_str=" + t_str + "\nnext=" + Arrays.toString(next));
 
-    Log.e(TAG, "initData: s_str="+s_str+",t_str="+t_str+",kmp_index="+kmpIndex(s_str,t_str) );
+    Log.e(TAG, "initData: s_str=" + s_str + ",t_str=" + t_str + ",kmp_index=" + kmpIndex(s_str, t_str));
 
     list = new ArrayList<>();
     for (int i = 'A'; i < 'Z'; i++) {
@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
           R.id.scene_custom, R.id.clip_viewPager, R.id.blur, R.id.group_recyclerview, R.id.custom_tabView, R.id.slide_menu,
           R.id.test_db, R.id.random_num, R.id.slide_viewpager, R.id.palette_imageview, R.id.downloadmanager, R.id.rxjava,
           R.id.weixin_bottom, R.id.wave_view, R.id.pie_layout, R.id.card_slider, R.id.zxing, R.id.custom_view, R.id.custom_image,
-          R.id.card_view_pager, R.id.test_annotation, R.id.level_progress, R.id.listView_checkBox})
+          R.id.card_view_pager, R.id.test_annotation, R.id.level_progress, R.id.listView_checkBox,R.id.constraint_layout})
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.recyclerView:
@@ -432,6 +432,9 @@ public class MainActivity extends AppCompatActivity {
         break;
       case R.id.listView_checkBox:
         goToNext(ListViewCheckBoxActivity.class);
+        break;
+      case R.id.constraint_layout:
+        goToNext(ConstraintLayoutActivity.class);
         break;
     }
   }

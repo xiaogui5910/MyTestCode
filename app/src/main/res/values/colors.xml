@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="item_bg">#11ff0000</color>
     <!--场景收听-->
     <color name="scene_custom_text_black">#111111</color>
@@ -19,7 +19,7 @@
 
     <color name="red">#f16d7a</color>
     <color name="green">#b7d28d</color>
-    <color name="blue">#b8f1ed</color>
+    <color name="blue">#4daca5</color>
 
     <color name="main_layer1">#EE000000</color>
     <color name="main_layer2">#22000000</color>

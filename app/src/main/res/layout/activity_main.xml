@@ -186,7 +186,10 @@
                 android:id="@+id/listView_checkBox"
                 style="@style/left_menu_text"
                 android:text="ListViewCheckBox"/>
-
+            <TextView
+                android:id="@+id/constraint_layout"
+                style="@style/left_menu_text"
+                android:text="ConstraintLayout"/>
         </LinearLayout>
 
     </ScrollView>
