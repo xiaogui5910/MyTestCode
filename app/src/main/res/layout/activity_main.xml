@@ -190,6 +190,10 @@
                 android:id="@+id/constraint_layout"
                 style="@style/left_menu_text"
                 android:text="ConstraintLayout"/>
+            <TextView
+                android:id="@+id/scroll_layout"
+                style="@style/left_menu_text"
+                android:text="ScrollActivity"/>
         </LinearLayout>
 
     </ScrollView>
