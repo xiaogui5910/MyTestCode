@@ -24,20 +24,20 @@ import com.example.lenovo.mytestcode.widget.SlideMenu;
 
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SlideMenuActivity extends AppCompatActivity {
 
-  @Bind(R.id.menu_listview)
+  @BindView(R.id.menu_listview)
   ListView menuListview;
-  @Bind(R.id.iv_head)
+  @BindView(R.id.iv_head)
   ImageView ivHead;
-  @Bind(R.id.main_listview)
+  @BindView(R.id.main_listview)
   ListView mainListview;
-  @Bind(R.id.my_linearlayout)
+  @BindView(R.id.my_linearlayout)
   LinearLayout myLinearlayout;
-  @Bind(R.id.slidemenu)
+  @BindView(R.id.slidemenu)
   SlideMenu slidemenu;
 
   FloatEvaluator floatEvaluator = new FloatEvaluator();

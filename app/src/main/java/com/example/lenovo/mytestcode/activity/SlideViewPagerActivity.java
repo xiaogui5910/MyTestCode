@@ -24,19 +24,19 @@ import com.example.lenovo.mytestcode.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SlideViewPagerActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
   private static final String TAG = "SlideViewPagerActivity";
-  @Bind(R.id.viewpager)
+  @BindView(R.id.viewpager)
   ViewPager viewpager;
   public final static int grid_page_num = 10;
   public final static int grid_col_num = 5;
-  @Bind(R.id.ll_point)
+  @BindView(R.id.ll_point)
   LinearLayout llPoint;
-  @Bind(R.id.iv_show)
+  @BindView(R.id.iv_show)
   Button ivShow;
   private List<GridView> gridList;
   private int lastPosition;

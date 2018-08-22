@@ -15,14 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.example.lenovo.mytestcode.application.MyTestCodeApp.context;
 
 public class CardSliderActivity extends AppCompatActivity {
 
-  @Bind(R.id.recycler_view)
+  @BindView(R.id.recycler_view)
   RecyclerView recyclerView;
   private CardSliderLayoutManager layoutManger;
   private ArrayList<ItemEntity> dataList;
@@ -68,7 +68,7 @@ public class CardSliderActivity extends AppCompatActivity {
     new CardSnapHelper().attachToRecyclerView(recyclerView);
   }
 
-  class CardSliderAdapter extends BaseQuickAdapter<ItemEntity> {
+  class CardSliderAdapter extends BaseQuickAdapter<ItemEntity,BaseViewHolder> {
 
     public CardSliderAdapter(int layoutResId, List<ItemEntity> data) {
       super(layoutResId, data);

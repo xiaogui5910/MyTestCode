@@ -15,24 +15,24 @@ import android.widget.ImageView;
 
 import com.example.lenovo.mytestcode.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CollapsingToolbarLayoutActivity extends AppCompatActivity {
 
 
-  @Bind(R.id.backdrop)
+  @BindView(R.id.backdrop)
   ImageView backdrop;
-  @Bind(R.id.toolbar)
+  @BindView(R.id.toolbar)
   Toolbar toolbar;
-  @Bind(R.id.collapsing_toolbar)
+  @BindView(R.id.collapsing_toolbar)
   CollapsingToolbarLayout collapsingToolbar;
-  @Bind(R.id.appbar)
+  @BindView(R.id.appbar)
   AppBarLayout appbar;
-  @Bind(R.id.main_content)
+  @BindView(R.id.main_content)
   CoordinatorLayout mainContent;
-  @Bind(R.id.fab)
+  @BindView(R.id.fab)
   FloatingActionButton fab;
 
   @Override

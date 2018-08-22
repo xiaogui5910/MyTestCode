@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.BackpressureStrategy;
@@ -58,17 +58,17 @@ import static com.example.lenovo.mytestcode.R.id.tv_get_code;
 public class RxJavaTestActivity extends AppCompatActivity {
 
   private static final String TAG = "RxJavaTestActivity";
-  @Bind(R.id.start)
+  @BindView(R.id.start)
   Button start;
-  @Bind(R.id.request)
+  @BindView(R.id.request)
   Button request;
-  @Bind(R.id.tv_movie)
+  @BindView(R.id.tv_movie)
   TextView tvMovie;
-  @Bind(R.id.btn_movie)
+  @BindView(R.id.btn_movie)
   Button btnMovie;
-  @Bind(R.id.et_code)
+  @BindView(R.id.et_code)
   EditText etCode;
-  @Bind(tv_get_code)
+  @BindView(tv_get_code)
   TextView tvGetCode;
   private Subscription mSubscription;
 

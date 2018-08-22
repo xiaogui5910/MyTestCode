@@ -19,13 +19,13 @@ import com.example.lenovo.mytestcode.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CardViewPagerActivity extends AppCompatActivity {
 
   private static final String TAG = "CardViewPagerActivity";
-  @Bind(R.id.viewPager)
+  @BindView(R.id.viewPager)
   ViewPager viewPager;
 
   private static final int OUTER_COUNT = 327;

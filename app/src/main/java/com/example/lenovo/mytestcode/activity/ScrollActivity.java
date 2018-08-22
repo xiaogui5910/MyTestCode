@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -35,27 +35,27 @@ import static com.example.lenovo.mytestcode.application.MyTestCodeApp.context;
 
 public class ScrollActivity extends AppCompatActivity implements PagingScrollHelper.onPageChangeListener {
 
-  @Bind(R.id.iv_title_back)
+  @BindView(R.id.iv_title_back)
   ImageView ivTitleBack;
-  @Bind(R.id.tv_top_title)
+  @BindView(R.id.tv_top_title)
   TextView tvTopTitle;
-  @Bind(R.id.tv_second_title)
+  @BindView(R.id.tv_second_title)
   TextView tvSecondTitle;
-  @Bind(R.id.tv_desc)
+  @BindView(R.id.tv_desc)
   TextView tvDesc;
-  @Bind(R.id.iv_pic)
+  @BindView(R.id.iv_pic)
   ImageView ivPic;
-  @Bind(R.id.tl_date)
+  @BindView(R.id.tl_date)
   TabLayout tlDate;
-//  @Bind(R.id.vp_list)
+//  @BindView(R.id.vp_list)
 //  ViewPager vpList;
-  @Bind(R.id.iv_up)
+  @BindView(R.id.iv_up)
   ImageView ivUp;
-  @Bind(R.id.tv_index)
+  @BindView(R.id.tv_index)
   TextView tvIndex;
-  @Bind(R.id.iv_down)
+  @BindView(R.id.iv_down)
   ImageView ivDown;
-  @Bind(R.id.rv_content_list)
+  @BindView(R.id.rv_content_list)
   RecyclerView rvContentList;
 
 //  PagingScrollHelper scrollHelper = new PagingScrollHelper();
@@ -165,7 +165,7 @@ public class ScrollActivity extends AppCompatActivity implements PagingScrollHel
 
       recyclerView.addOnItemTouchListener(new OnItemClickListener() {
         @Override
-        public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
           ToastUtil.showToast((String) baseQuickAdapter.getItem(i));
         }
       });
@@ -308,7 +308,7 @@ public class ScrollActivity extends AppCompatActivity implements PagingScrollHel
     }
   }
 
-  class MyRecyclerViewAdapter extends BaseQuickAdapter<String> {
+  class MyRecyclerViewAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
 
     public MyRecyclerViewAdapter(int layoutResId, List<String> data) {
       super(layoutResId, data);

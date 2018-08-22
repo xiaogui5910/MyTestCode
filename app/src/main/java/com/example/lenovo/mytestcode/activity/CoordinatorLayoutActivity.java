@@ -15,25 +15,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.lenovo.mytestcode.fragment.PageFragment;
 import com.example.lenovo.mytestcode.R;
+import com.example.lenovo.mytestcode.fragment.PageFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CoordinatorLayoutActivity extends AppCompatActivity {
 
-  @Bind(R.id.fab)
+  @BindView(R.id.fab)
   FloatingActionButton fab;
-  @Bind(R.id.toolbar)
+  @BindView(R.id.toolbar)
   Toolbar toolbar;
-  @Bind(R.id.tabs)
+  @BindView(R.id.tabs)
   TabLayout tabs;
-  @Bind(R.id.appbar)
+  @BindView(R.id.appbar)
   AppBarLayout appbar;
-  @Bind(R.id.viewpager)
+  @BindView(R.id.viewpager)
   ViewPager viewpager;
-  @Bind(R.id.activity_coordinator_layout)
+  @BindView(R.id.activity_coordinator_layout)
   CoordinatorLayout activityCoordinatorLayout;
 
 

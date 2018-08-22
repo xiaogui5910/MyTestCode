@@ -36,6 +36,7 @@ import com.example.lenovo.mytestcode.utils.LocationUtils;
 import com.example.lenovo.mytestcode.utils.NdkTestUtils;
 import com.example.lenovo.mytestcode.utils.ToastUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.zy.logcat.LogCatControl;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,18 +49,18 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.functions.Consumer;
 
 public class MainActivity extends AppCompatActivity {
   private static final String TAG = "MainActivity";
-  @Bind(R.id.rv_test)
+  @BindView(R.id.rv_test)
   RecyclerView rvTest;
-  @Bind(R.id.toolbar)
+  @BindView(R.id.toolbar)
   Toolbar toolbar;
-  @Bind(R.id.drawerLayout)
+  @BindView(R.id.drawerLayout)
   DrawerLayout drawerLayout;
   private ArrayList<String> list;
   private ActionBarDrawerToggle toggle;
@@ -502,10 +503,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, TabLayoutTestActivity.class));
         break;
       case R.id.action_edit:
-        startActivity(new Intent(this, CoordinatorLayoutActivity.class));
+//        startActivity(new Intent(this, CoordinatorLayoutActivity.class));
+        //显示dialog
+        LogCatControl.getBuilder(this)
+                .setTitle("自定义标题")
+                .setSearchContent("自定义搜索内容")
+                .setSearchTag("自定义Tag")
+                .setShowGrade(3) //设置显示级别:0 所有，1 系统，2 警告,3 错误
+                .show();
         break;
       case R.id.action_nestedscrollview:
-        startActivity(new Intent(this, CollapsingToolbarLayoutActivity.class));
+//        startActivity(new Intent(this, CollapsingToolbarLayoutActivity.class));
+//清除dialog
+        LogCatControl.getBuilder(this).clear();
         break;
     }
     return true;

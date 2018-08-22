@@ -12,7 +12,6 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
-import com.tencent.tinker.loader.app.ApplicationLike;
 
 /**
  * Created by lenovo on 2017/3/22.
@@ -22,12 +21,11 @@ public class MyTestCodeApp extends Application {
   private static final String MY_TAG = "MyTestCode";
   private static DaoSession daoSession;
   public static Context context;
-  private ApplicationLike tinkerApplicationLike;
+//  private ApplicationLike tinkerApplicationLike;
 
   @Override
   public void onCreate() {
     super.onCreate();
-
 //    // 我们可以从这里获得Tinker加载过程的信息
 //    tinkerApplicationLike = TinkerPatchApplicationLike.getTinkerPatchApplicationLike();
 //

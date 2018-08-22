@@ -22,12 +22,12 @@ import com.example.lenovo.mytestcode.bean.Status;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
-  @Bind(R.id.rv_test1)
+  @BindView(R.id.rv_test1)
   RecyclerView rvTest1;
 
   private ArrayList<Status> list;
@@ -85,7 +85,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     //条目点击事件
     rvTest1.addOnItemTouchListener(new OnItemClickListener() {
       @Override
-      public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+      public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         Toast.makeText(RecyclerViewActivity.this, "" + list.get(position).getName(), Toast.LENGTH_SHORT).show();
       }
     });
@@ -93,7 +93,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     //条目子元素点击事件
     rvTest1.addOnItemTouchListener(new OnItemChildClickListener() {
       @Override
-      public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+      public void onSimpleItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         switch (view.getId()) {
           case R.id.iv_icon:
             Toast.makeText(RecyclerViewActivity.this, "icon" + position, Toast.LENGTH_SHORT).show();
@@ -109,7 +109,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     });
   }
 
-  public class QuickAdapter extends BaseQuickAdapter<Status> {
+  public class QuickAdapter extends BaseQuickAdapter<Status,BaseViewHolder> {
     public QuickAdapter() {
       super(R.layout.item2, list);
     }

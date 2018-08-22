@@ -23,14 +23,14 @@ import com.example.lenovo.mytestcode.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ListViewCheckBoxActivity extends AppCompatActivity {
 
-  @Bind(R.id.listView)
+  @BindView(R.id.listView)
   ListView listView;
-  @Bind(R.id.recyclerView)
+  @BindView(R.id.recyclerView)
   RecyclerView recyclerView;
   private List<Item> dataList;
 
@@ -67,7 +67,7 @@ public class ListViewCheckBoxActivity extends AppCompatActivity {
     recyclerView.setAdapter(myRecyclerViewAdapter);
     recyclerView.addOnItemTouchListener(new OnItemClickListener() {
       @Override
-      public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+      public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         Item item = (Item) baseQuickAdapter.getItem(position);
         item.setSelected(!item.isSelected());
         ToastUtil.showToast(item.getName());
@@ -125,7 +125,7 @@ public class ListViewCheckBoxActivity extends AppCompatActivity {
     }
   }
 
-  class MyRecyclerViewAdapter extends BaseQuickAdapter<Item> {
+  class MyRecyclerViewAdapter extends BaseQuickAdapter<Item,BaseViewHolder> {
 
     public MyRecyclerViewAdapter(int layoutResId, List<Item> data) {
       super(layoutResId, data);

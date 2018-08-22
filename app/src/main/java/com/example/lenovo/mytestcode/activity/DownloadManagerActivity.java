@@ -28,7 +28,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.functions.Consumer;
@@ -36,17 +36,17 @@ import io.reactivex.functions.Consumer;
 public class DownloadManagerActivity extends AppCompatActivity {
 
   private static final String TAG = "DownloadManagerActivity";
-  @Bind(R.id.tv_progress)
+  @BindView(R.id.tv_progress)
   TextView tvProgress;
-  @Bind(R.id.pb_progress)
+  @BindView(R.id.pb_progress)
   ProgressBar pbProgress;
-  @Bind(R.id.tv_total)
+  @BindView(R.id.tv_total)
   TextView tvTotal;
-  @Bind(R.id.btn_start)
+  @BindView(R.id.btn_start)
   Button btnStart;
-  @Bind(R.id.btn_query)
+  @BindView(R.id.btn_query)
   Button btnPause;
-  @Bind(R.id.btn_cancel)
+  @BindView(R.id.btn_cancel)
   Button btnCancel;
   private DownloadManager downloadManager;
   private long downloadId;

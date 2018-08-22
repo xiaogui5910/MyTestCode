@@ -19,7 +19,7 @@ import com.example.lenovo.mytestcode.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SceneCustomActivity extends AppCompatActivity implements View.OnClickListener {
@@ -27,7 +27,7 @@ public class SceneCustomActivity extends AppCompatActivity implements View.OnCli
   RecyclerView rvSceneTag;
   TextView tvSceneReplace;
   Button btnSure;
-  @Bind(R.id.activity_scene_custom)
+  @BindView(R.id.activity_scene_custom)
   RelativeLayout activitySceneCustom;
 
   private ArrayList<String> list;
@@ -86,7 +86,7 @@ public class SceneCustomActivity extends AppCompatActivity implements View.OnCli
 
     rvSceneTag.addOnItemTouchListener(new OnItemClickListener() {
       @Override
-      public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+      public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         if (view.isSelected()) {
           view.setSelected(false);
         } else {
@@ -102,7 +102,7 @@ public class SceneCustomActivity extends AppCompatActivity implements View.OnCli
     rvSecond.setAdapter(secondAdapter);
     rvSecond.addOnItemTouchListener(new OnItemClickListener() {
       @Override
-      public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+      public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         ToastUtil.showToast(list.get(position)+" second");
       }
     });
@@ -142,18 +142,10 @@ public class SceneCustomActivity extends AppCompatActivity implements View.OnCli
 
 
 
-  public class SceneCustomAdapter extends BaseQuickAdapter<String> {
+  public class SceneCustomAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
 
     public SceneCustomAdapter(int layoutResId, List<String> data) {
       super(layoutResId, data);
-    }
-
-    public SceneCustomAdapter(List<String> data) {
-      super(data);
-    }
-
-    public SceneCustomAdapter(View contentView, List<String> data) {
-      super(contentView, data);
     }
 
     @Override
@@ -162,7 +154,7 @@ public class SceneCustomActivity extends AppCompatActivity implements View.OnCli
     }
   }
 
-  public class SceneListAdapter extends BaseQuickAdapter<String>{
+  public class SceneListAdapter extends BaseQuickAdapter<String,BaseViewHolder>{
 
     public SceneListAdapter(int layoutResId, List<String> data) {
       super(layoutResId, data);

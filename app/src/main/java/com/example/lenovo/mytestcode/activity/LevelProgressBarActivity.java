@@ -11,21 +11,21 @@ import android.widget.Button;
 import com.example.lenovo.mytestcode.R;
 import com.example.lenovo.mytestcode.widget.LevelProgressBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LevelProgressBarActivity extends AppCompatActivity {
 
-  @Bind(R.id.level_progress_bar)
+  @BindView(R.id.level_progress_bar)
   LevelProgressBar levelProgressBar;
-  @Bind(R.id.level1)
+  @BindView(R.id.level1)
   Button level1;
-  @Bind(R.id.level2)
+  @BindView(R.id.level2)
   Button level2;
-  @Bind(R.id.level3)
+  @BindView(R.id.level3)
   Button level3;
-  @Bind(R.id.level4)
+  @BindView(R.id.level4)
   Button level4;
 
   @Override

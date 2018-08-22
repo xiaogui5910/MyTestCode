@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.example.lenovo.mytestcode.application.MyTestCodeApp.context;
@@ -23,7 +23,7 @@ import static com.example.lenovo.mytestcode.application.MyTestCodeApp.context;
 public class PieLayoutActivity extends AppCompatActivity {
 
   private static final String TAG = "PieLayoutActivity";
-  @Bind(R.id.pileLayout)
+  @BindView(R.id.pileLayout)
   PileLayout pileLayout;
 
   @Override

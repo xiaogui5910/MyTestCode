@@ -37,40 +37,40 @@ import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AlarmManagerActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
   private static final String TAG = "AlarmManagerActivity";
-  @Bind(R.id.tv_speed)
+  @BindView(R.id.tv_speed)
   TextView tvSpeed;
-  @Bind(R.id.bt_stop_cycle)
+  @BindView(R.id.bt_stop_cycle)
   Button btStopCycle;
-  @Bind(R.id.ll_bottom)
+  @BindView(R.id.ll_bottom)
   LinearLayout llBottom;
-  @Bind(R.id.activity_alarm_manager)
+  @BindView(R.id.activity_alarm_manager)
   RelativeLayout activityAlarmManager;
-  @Bind(R.id.seekBar)
+  @BindView(R.id.seekBar)
   SeekBar seekBar;
-  @Bind(R.id.seekBar1)
+  @BindView(R.id.seekBar1)
   SeekBar seekBar1;
-  @Bind(R.id.seekbar_slider_time)
+  @BindView(R.id.seekbar_slider_time)
   TextView seekbarSliderTime;
-  @Bind(R.id.ll_test1)
+  @BindView(R.id.ll_test1)
   LinearLayout llTest1;
-  @Bind(R.id.tx_currentTime)
+  @BindView(R.id.tx_currentTime)
   TextView txCurrentTime;
-  @Bind(R.id.tx_maxTime)
+  @BindView(R.id.tx_maxTime)
   TextView txMaxTime;
-  @Bind(R.id.seekBar_layout)
+  @BindView(R.id.seekBar_layout)
   LinearLayout seekBarLayout;
-  @Bind(R.id.iv_circle)
+  @BindView(R.id.iv_circle)
   ImageView ivCircle;
-  @Bind(R.id.iv_thumb)
+  @BindView(R.id.iv_thumb)
   ImageView ivThumb;
-  @Bind(R.id.rl_thumb_bg)
+  @BindView(R.id.rl_thumb_bg)
   RelativeLayout rlThumbBg;
 
 

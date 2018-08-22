@@ -12,7 +12,6 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -46,12 +45,12 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
 
     View testView = LayoutInflater.from(this).inflate(R.layout.layout_test, null);
 
-    String extPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-    String dataDir = Environment.getDataDirectory().getAbsolutePath();
-    Log.e(TAG, "onCreate: extPath=" + extPath);
-    Log.e(TAG, "onCreate: dataDir=" + dataDir);
-    String external_storage = System.getenv("EXTERNAL_STORAGE");
-    Log.e(TAG, "onCreate: external_storage=" + external_storage);
+//    String extPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+//    String dataDir = Environment.getDataDirectory().getAbsolutePath();
+//    Log.e(TAG, "onCreate: extPath=" + extPath);
+//    Log.e(TAG, "onCreate: dataDir=" + dataDir);
+//    String external_storage = System.getenv("EXTERNAL_STORAGE");
+//    Log.e(TAG, "onCreate: external_storage=" + external_storage);
 
     registerNetworkChangeListener();
 
@@ -70,7 +69,7 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
 
     recyclerView.addOnItemTouchListener(new OnItemClickListener() {
       @Override
-      public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+      public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
         final ScanResult scanResult = (ScanResult) baseQuickAdapter.getItem(i);
         boolean isSave = checkSaveStatus(scanResult.SSID);
         if (!openWifi()) {
@@ -131,7 +130,7 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
     }
   }
 
-  class WifiAdapter extends BaseQuickAdapter<ScanResult> {
+  class WifiAdapter extends BaseQuickAdapter<ScanResult,BaseViewHolder> {
 
     public WifiAdapter(int layoutResId, List<ScanResult> data) {
       super(layoutResId, data);

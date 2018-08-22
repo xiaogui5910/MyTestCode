@@ -39,7 +39,7 @@ import com.example.lenovo.mytestcode.utils.ScreenUtils;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ShareElementFor4xSecondActivity extends AppCompatActivity {
@@ -48,7 +48,7 @@ public class ShareElementFor4xSecondActivity extends AppCompatActivity {
   private static final long DEFAULT_DURATION = 1000;
   private static final String TAG ="ShareSecondActivity" ;
 
-  @Bind(R.id.rv_share_element)
+  @BindView(R.id.rv_share_element)
   RecyclerView rvShareElement;
   private FrameLayout destinationView;
   private CardView containerView;
@@ -176,7 +176,7 @@ public class ShareElementFor4xSecondActivity extends AppCompatActivity {
     onUiReady();
   }
 
-  public class QuickAdapter extends BaseQuickAdapter<Status> {
+  public class QuickAdapter extends BaseQuickAdapter<Status,BaseViewHolder> {
     public QuickAdapter() {
       super(R.layout.item2, list);
     }

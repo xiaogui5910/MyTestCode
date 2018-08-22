@@ -22,19 +22,19 @@ import com.example.lenovo.mytestcode.utils.DensityUtils;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SplashActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
-  @Bind(R.id.viewpager)
+  @BindView(R.id.viewpager)
   ViewPager viewpager;
-  @Bind(R.id.ll_splash)
+  @BindView(R.id.ll_splash)
   LinearLayout llSplash;
-  @Bind(R.id.btn_splash)
+  @BindView(R.id.btn_splash)
   Button btnSplash;
-  @Bind(R.id.activity_spalsh)
+  @BindView(R.id.activity_spalsh)
   RelativeLayout activitySpalsh;
 
   private ArrayList<MyFragment> fragments;

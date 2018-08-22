@@ -26,34 +26,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CustomViewActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
   private static final int MID_VALUE = 100;
-  @Bind(R.id.postmanview)
+  @BindView(R.id.postmanview)
   PostManView postmanview;
-  @Bind(R.id.pieView)
+  @BindView(R.id.pieView)
   PieView pieView;
-  @Bind(R.id.random)
+  @BindView(R.id.random)
   Button random;
-  @Bind(R.id.check_view)
+  @BindView(R.id.check_view)
   CheckView checkView;
-  @Bind(R.id.check)
+  @BindView(R.id.check)
   Button check;
-  @Bind(R.id.uncheck)
+  @BindView(R.id.uncheck)
   Button uncheck;
-  @Bind(R.id.leaf_loading_view)
+  @BindView(R.id.leaf_loading_view)
   LeafLoadingView mLeafLoadingView;
-  @Bind(R.id.iv_change_img)
+  @BindView(R.id.iv_change_img)
   ImageView ivChangeImg;
-  @Bind(R.id.sb_color)
+  @BindView(R.id.sb_color)
   SeekBar sbColor;
-  @Bind(R.id.sb_saturation)
+  @BindView(R.id.sb_saturation)
   SeekBar sbSaturation;
-  @Bind(R.id.sb_light)
+  @BindView(R.id.sb_light)
   SeekBar sbLight;
   private List<PieData> list;
   private boolean isOrder;

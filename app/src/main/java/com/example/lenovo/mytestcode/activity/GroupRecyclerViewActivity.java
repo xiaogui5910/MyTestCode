@@ -22,14 +22,14 @@ import com.example.lenovo.mytestcode.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class GroupRecyclerViewActivity extends AppCompatActivity {
 
-  @Bind(R.id.rv_group)
+  @BindView(R.id.rv_group)
   RecyclerView rvGroup;
-  @Bind(R.id.activity_group_recycler_view)
+  @BindView(R.id.activity_group_recycler_view)
   RelativeLayout activityGroupRecyclerView;
   private ArrayList<SceneInfo> customSceneList;
   private ArrayList<SceneInfo> showMySceneList;
@@ -81,7 +81,7 @@ public class GroupRecyclerViewActivity extends AppCompatActivity {
 
     rvGroup.addOnItemTouchListener(new OnItemClickListener() {
       @Override
-      public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
+      public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
         MySection mySection = (MySection) baseQuickAdapter.getItem(position);
         if (mySection.isHeader) {
 //          ToastUtil.showToast(mySection.header+position);
@@ -144,7 +144,7 @@ public class GroupRecyclerViewActivity extends AppCompatActivity {
 
   }
 
-  class GroupAdapter extends BaseSectionQuickAdapter<MySection> {
+  class GroupAdapter extends BaseSectionQuickAdapter<MySection,BaseViewHolder> {
 
     public GroupAdapter(int layoutResId, int sectionHeadResId, List<MySection> data) {
       super(layoutResId, sectionHeadResId, data);
